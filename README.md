@@ -2,6 +2,7 @@
 
 ## Integrantes
 - Rioyo Franco (46.089.724)
+- Pablo Belozcar (41.167.959)
 
 ## Descripcion
 Se propone crear una base de datos descargable que sirva de apoyo y referencia tanto para proyectos de descarga y distribucion de ROM's como para informar a la gente que busca informacion sobre videojuegos bien presentada y desplegada.
