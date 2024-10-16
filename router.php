@@ -9,10 +9,8 @@
 -->
 
 <?php
-    require_once 'showBase.php';
     require_once './app/controller/home.controller.php';
-
-    $home_controller = new HomeController;
+    require_once './app/controller/game.controller.php';
 
     define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
     
@@ -27,12 +25,20 @@
 
     switch ($params[0]) {
         case "home":
+            $home_controller = new HomeController();
             $home_controller->showHome();
             break;
 
-        // case "game":
-        //     showGameByid();
-        //     break;
+        case "game":
+            if (!isset($params[1])) {
+                $home_controller = new HomeController();
+                $home_controller->showHome();
+            }
+            else{
+                $game_controller = new GameController();
+                $game_controller->ShowGameByid();
+            }
+            break;
         
         default:
             echo "ERROR 404";

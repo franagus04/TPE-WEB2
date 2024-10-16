@@ -1,0 +1,40 @@
+<table>
+    <tr class="head">
+        <th>Portada</th>
+        <th>Titulo</th>
+        <th>ID de Microsoft</th>
+        <th>Género</th>
+        <th>Año de lanzamiento</th>
+        <th>Clasificación</th>
+        <th>Desarrolladores</th>
+        <th>Calificación</th>
+    </tr>
+<?php 
+    foreach($table as $juego) {
+        $thumbnail = $juego->thumbnail;
+        $title = $juego->title;
+        $id = $juego->title_id;
+        $genre = $juego->genre;
+        $release = $juego->release;
+        $class = $juego->pegi_class;
+        $devs = $juego->devs;
+        $rate = $juego->vandal_rating;
+?>
+        <tr class="row">
+            <td class="thumbnail-property">
+                <img class="portada" src="<?= $thumbnail ?>" alt="portada">
+            </td>
+            <td class="title-property">
+                <a href="<?=BASE_URL?>game/<?=$juego->id?>"><?= $title ?></a>
+            </td>
+            <td class="id-property"><?= $id ?></td>
+            <td class="genre-property"><?= $genre ?></td>
+            <td class="release-property"><?= $release ?></td>
+            <td class="class-property"><?= $class ?></td>
+            <td class="devs-property"><?= $devs ?></td>
+            <td class="rating-property"><?= $rate ?></td>
+        </tr>
+<?php
+    }
+?>
+</table>
