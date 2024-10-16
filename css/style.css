@@ -1,0 +1,12 @@
+*{
+    background-color: olivedrab;
+}
+
+.fila-filtros{
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-filtro{
+    
+}
