@@ -32,7 +32,7 @@ CREATE TABLE `listadox360` (
   `title_id` varchar(10) NOT NULL,
   `pegi_class` tinyint(2) NOT NULL,
   `title` varchar(60) NOT NULL,
-  `realease` smallint(4) NOT NULL,
+  `release` smallint(4) NOT NULL,
   `genre` varchar(45) NOT NULL,
   `devs` varchar(45) NOT NULL,
   `vandal_rating` varchar(10) NOT NULL,
@@ -43,10 +43,10 @@ CREATE TABLE `listadox360` (
 -- Volcado de datos para la tabla `listadox360`
 --
 
-INSERT INTO `listadox360` (`id`, `title_id`, `pegi_class`, `title`, `realease`, `genre`, `devs`, `vandal_rating`, `thumbnail`) VALUES
+INSERT INTO `listadox360` (`id`, `title_id`, `pegi_class`, `title`, `release`, `genre`, `devs`, `vandal_rating`, `thumbnail`) VALUES
 (1, '555308c2', 18, 'Assassin\'s Creed IV: Black Flag', 2013, 'Accion', 'Ubisoft', '9', 'https://media.vandal.net/t200/20557/201322812018_1.jpg'),
 (2, '373407d8', 7, 'Hora de Aventuras: Finn y Jake, Investigadores', 2015, 'Aventura', 'Bandai Namco', '6', 'https://m.media-amazon.com/images/I/81dt08wLF5L._AC_UF1000,1000_QL80_.jpg'),
-(3, '373307d9', 12, 'Dance Central 3', 2012, 'Deportes', 'Harmonix', '9', 'https://http2.mlstatic.com/D_NQ_NP_658655-MLA76350674990_052024-O.webp'),
+(3, '373307d9', 12, 'Dance Central 3', 2012, 'Deporte', 'Harmonix', '9', 'https://http2.mlstatic.com/D_NQ_NP_658655-MLA76350674990_052024-O.webp'),
 (5, '53450815', 7, 'Sonic and SEGA All-Stars Racing', 2010, 'Carreras', 'Sega', '8', 'https://media.vandal.net/t200/10765/201011911317_1.jpg'),
 (6, '584112b0', 18, 'Call of Juarez: Gunslinger', 2013, 'Disparos', 'Techland', '8', 'https://media.vandal.net/t200/16708/2013427105836_1.jpg'),
 (7, '394f07d1', 16, 'Diablo III', 2013, 'Rol', 'Blizzard', '8', 'https://media.vandal.net/t200/15249/diablo-iii-2013831113047_1.jpg'),
@@ -57,7 +57,7 @@ INSERT INTO `listadox360` (`id`, `title_id`, `pegi_class`, `title`, `realease`, 
 (12, '58411498', 1, 'Goat Simulator', 2015, 'Simulacion', 'Double Eleven', '8', 'https://media.vandal.net/t200/30037/goat-simulator-xbla-2015428103254_1.jpg'),
 (13, '464f0802', 12, 'Terraria', 2013, 'Supervivencia', '505 Games', '8', 'https://media.vandal.net/t200/16737/2013316103629_1.jpg'),
 (14, '584111f7', 7, 'Minecraft', 2012, 'Mundo Abierto', 'Mojang', '8', 'https://media.vandal.net/t200/14511/2012414103139_1.jpg'),
-(15, '4d5308ed', 3, 'Kinect Adventures!', 2010, 'Deportes', 'Microsoft', '6', 'https://media.vandal.net/t200/12659/2011111911284_1.jpg'),
+(15, '4d5308ed', 3, 'Kinect Adventures!', 2010, 'Deporte', 'Microsoft', '6', 'https://media.vandal.net/t200/12659/2011111911284_1.jpg'),
 (16, '555308ca', 18, 'Far Cry 4', 2014, 'Aventura', 'Ubisoft', '8', 'https://media.vandal.net/t200/24455/far-cry-4-2014519123954_1.jpg'),
 (17, '415608c3', 18, 'Call of Duty: Black Ops II', 2011, 'Disparos', 'Activision', '9', 'https://media.vandal.net/t200/14958/2012825101040_1.jpg'),
 (18, '4e4d0862', 12, 'Dragon Ball Xenoverse', 2015, 'Pelea', 'Bandai Namco', '7', 'https://media.vandal.net/t200/24458/dragon-ball-xenoverse-201522695713_1.jpg'),
