@@ -1,0 +1,30 @@
+<main>
+    <h2><?=$game->title?></h2>
+    <img src="<?=$game->thumbnail?>" alt="portada">
+    <table>
+        <tr>
+            <td>ID de titulo</td>
+            <td><?=$game->title_id?></td>
+        </tr>
+        <tr>
+            <td>Género</td>
+            <td><?=$game->genre?></td>
+        </tr>
+        <tr>
+            <td>Calificacion según Vandal</td>
+            <td><?=$game->vandal_rating?></td>
+        </tr>
+        <tr>
+            <td>Clasificacion según PEGI</td>
+            <td><?=$game->pegi_class?></td>
+        </tr>
+        <tr>
+            <td>Año de lanzamiento</td>
+            <td><?=$game->release?></td>
+        </tr>
+        <tr>
+            <td>Empresa desarrolladora</td>
+            <td><?=$game->devs?></td>
+        </tr>
+    </table>
+</main>

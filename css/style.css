@@ -1,0 +1,137 @@
+*{
+    background-image: url(img/xbox-fondo.png);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+}
+
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+    margin-top: 15px;
+}
+
+.spacer{
+    width: 70px;
+}
+
+.titulo{
+    font-size: 30px;  
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.btn button{
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    height: 30px;
+    width: 70px;
+}
+
+.btn button:hover{
+    transition: 0.5s;
+    background-color: rgb(39, 218, 128);
+}
+
+.btn input:hover{
+    transition: 0.5s;
+    background-color: rgb(39, 218, 128);
+}
+
+.filters{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenedor-filtros{
+    width: fit-content;
+    padding: 5px;
+    border: solid 1px black;
+    border-radius: 10px;
+}
+
+.item-filtro{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 5px;
+}
+
+.label{
+    margin-right: 10px;
+}
+
+.item-filtro select{
+    width: 100px;
+    border-color: black;
+    cursor: pointer;
+}
+
+.submit{
+    width: 100%;
+}
+
+.btn-submit{
+    width: 100%;
+}
+
+.btn input{
+    padding: 4px 6px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+table{
+    width: 75%;
+    height: 75%;
+    margin-top: 5%;
+    margin-left: 10%;
+}
+
+th{
+    font-size: 14px;
+}
+
+table, td, tr{
+    border: 2px solid #000000;
+    border-collapse: collapse;
+}
+
+td{
+    width: fit-content;
+    height: 10%;
+}
+
+tr{
+    text-align: center;
+}
+
+td img{
+    width: 200px;
+    height: 250px;
+}
+
+td a{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all;
+}
+
+td a:hover{
+    transition: 0.5s;
+    font-size: large;
+}
