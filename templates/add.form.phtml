@@ -1,0 +1,112 @@
+<main>
+    <section class="filters">
+        <h1>Bienvenido Administrador</h1>
+        <h2>Agregar elemento</h2>
+        <!-- categorias -->
+        <form action="" method="post" class="form">
+            <div class="contenedor-filtros"> 
+                <!-- INPUT DE ID DEL TITULO -->
+                <div class="item-filtro">
+                    <label for="title_id" class="label">ID del titulo</label>
+                    <input type="text" id="title_id" name="title_id">
+                </div>
+                <!-- INPUT DE CLASIFICACION POR EDAD -->
+                <div class="item-filtro">
+                    <label for="pegi-filter" class="label">Clasificacion</label>
+                    <select name="pegi_class" id="pegi-filter">
+                        <option value="null"></option>
+                        <option value="1">Sin clasificacion</option>
+                        <option value="3">PEGI 3+</option>
+                        <option value="7">PEGI 7+</option>
+                        <option value="12">PEGI 12+</option>
+                        <option value="16">PEGI 16+</option>
+                        <option value="18">PEGI 18+</option>
+                    </select>
+                </div>
+                <!-- INPUT DE TITULO -->
+                <div class="item-filtro">
+                    <label for="title" class="label">Titulo</label>
+                    <input type="text" id="title" name="title">
+                </div>
+                <!-- INPUT DE AÑO DE LANZAMIENTO -->
+                <div class="item-filtro">
+                    <label for="year-filter" class="label">Lanzamiento</label>
+                    <select name="release" id="year-filter">
+                        <option value="null"></option>
+                        <option value="2005">2005</option>
+                        <option value="2006">2006</option>
+                        <option value="2007">2007</option>
+                        <option value="2008">2008</option>
+                        <option value="2009">2009</option>
+                        <option value="2010">2010</option>
+                        <option value="2011">2011</option>
+                        <option value="2012">2012</option>
+                        <option value="2013">2013</option>
+                        <option value="2014">2014</option>
+                        <option value="2015">2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                    </select>
+                </div>
+                <!-- INPUT DE GENERO -->
+                <div class="item-filtro"> 
+                    <label for="genre-filter" class="label">Genero</label>
+                    <select name="genre" id="genre-filter">
+                        <option value="null"></option>
+                        <option value="Accion">Accion</option>
+                        <option value="Aventura">Aventura</option>
+                        <option value="Rol">Rol</option>
+                        <option value="Carreras">Carreras</option>
+                        <option value="Disparos">Disparos</option>
+                        <option value="Plataformas">Plataformas</option>
+                        <option value="Deporte">Deportes</option>
+                        <option value="Pelea">Lucha</option>
+                        <option value="Terror">Horror</option>
+                        <option value="Simulacion">Simulacion</option>
+                        <option value="Supervivencia">Supervivencia</option>
+                        <option value="Mundo Abierto">Mundo Abierto</option>
+                    </select>
+                </div>
+                <!-- INPUT DE EMPRESA DESARROLLADORA -->
+                <div class="item-filtro">
+                    <label for="devs-filter" class="label">Desarrolladores</label>
+                    <select name="devs" id="devs-filter">
+                        <option value="null"></option>
+                        <option value="Activision">Activision</option>
+                        <option value="Ubisoft">Ubisoft</option>
+                        <option value="Team17">Team17</option>
+                        <option value="Harmonix">Harmonix</option>
+                        <option value="Bandai Namco">Bandai Namco</option>
+                        <option value="Blizzard">Blizzard</option>
+                    </select>       
+                </div>
+                <!-- INPUT DE VALORACION DE CONTENIDO -->
+                <div class="item-filtro">
+                    <label for="rating-filter" class="label">Valoraciones</label>
+                    <select name="vandal_rating" id="rating-filter">
+                        <option value="null"></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <!-- INPUT DE PORTADA -->
+                <div class="item-filtro">
+                    <label for="thumbnail" class="label">Portada</label>
+                    <input type="text" id="thumbnail" name="thumbnail">
+                </div>
+            </div>
+            <div class="btn btn-submit">
+                    <input type="submit" class="submit" placeholder="Agregar">
+            </div>
+        </form>

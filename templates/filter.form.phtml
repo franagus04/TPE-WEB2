@@ -4,6 +4,7 @@
         <!-- tabla para ubicar los filtros/categorias -->
         <form action="" method="post" class="form">
             <div class="contenedor-filtros"> 
+                <!-- FILTRO POR VALORACION DE CONTENIDO -->
                 <div class="item-filtro">
                     <label for="rating-filter" class="label">Valoraciones</label>
                     <select name="vandal_rating" id="rating-filter">
@@ -12,7 +13,8 @@
                         <option value="negative">Negativas</option>
                     </select>
                 </div>
-                <div class="item-filtro">
+                <!-- FILTRO POR GENERO -->
+                <div class="item-filtro"> 
                     <label for="genre-filter" class="label">Genero</label>
                     <select name="genre" id="genre-filter">
                         <option value="null"></option>
@@ -30,6 +32,7 @@
                         <option value="Mundo Abierto">Mundo Abierto</option>
                     </select>
                 </div>
+                <!-- FILTRO POR AÑO DE LANZAMIENTO -->
                 <div class="item-filtro">
                     <label for="year-filter" class="label">Lanzamiento</label>
                     <select name="release" id="year-filter">
@@ -52,6 +55,7 @@
                         <option value="2020">2020</option>
                     </select>
                 </div>
+                <!-- FILTRO DE CLASIFICACION POR EDAD -->
                 <div class="item-filtro">
                     <label for="pegi-filter" class="label">Clasificacion</label>
                     <select name="pegi_class" id="pegi-filter">
@@ -64,6 +68,7 @@
                         <option value="18">PEGI 18+</option>
                     </select>
                 </div>
+                <!-- FILTRO POR EMPRESA DESARROLLADORA -->
                 <div class="item-filtro">
                     <label for="devs-filter" class="label">Desarrolladores</label>
                     <select name="devs" id="devs-filter">

@@ -3,7 +3,7 @@
 
         function showHome(){
             require_once './templates/layout/header.phtml';
-            require_once './templates/form.phtml';
+            require_once './templates/filter.form.phtml';
         }
     
         function showTable($table){

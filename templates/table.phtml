@@ -10,24 +10,26 @@
         <th>Calificación</th>
     </tr>
 <?php 
-    foreach($table as $juego) {
-        $thumbnail = $juego->thumbnail;
-        $title = $juego->title;
-        $id = $juego->title_id;
-        $genre = $juego->genre;
-        $release = $juego->release;
-        $class = $juego->pegi_class;
-        $devs = $juego->devs;
-        $rate = $juego->vandal_rating;
+    foreach($table as $game) {         //itera sobre la tabla recibida
+        $thumbnail = $game->thumbnail; //rellena variables con los datos del objeto sobre el que trabaja en cada iteracion
+        $title = $game->title;
+        $id = $game->id;
+        $title_id = $game->title_id;
+        $genre = $game->genre;
+        $release = $game->release;
+        $class = $game->pegi_class;
+        $devs = $game->devs;
+        $rate = $game->vandal_rating;
 ?>
+        <!-- crea una tabla con los datos proporcionados la cual otorga acceso a la pagina singular de cada juego -->
         <tr class="row">
             <td class="thumbnail-property">
                 <img class="portada" src="<?= $thumbnail ?>" alt="portada">
             </td>
             <td class="title-property">
-                <a href="<?=BASE_URL?>game/<?=$juego->id?>"><?= $title ?></a>
+                <a href="<?=BASE_URL?>game/<?=$id?>"><?= $title ?></a>
             </td>
-            <td class="id-property"><?= $id ?></td>
+            <td class="title-id-property"><?= $title_id ?></td>
             <td class="genre-property"><?= $genre ?></td>
             <td class="release-property"><?= $release ?></td>
             <td class="class-property"><?= $class ?></td>

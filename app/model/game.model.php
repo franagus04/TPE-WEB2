@@ -9,7 +9,7 @@
             $query_single_game = $this->db->prepare("SELECT * from listadox360 WHERE id = ".$id."");
             //ejecucion de la sentencia
             $query_single_game->execute();
-            //recepcion de datos
+            //recepcion de datos almacenado como un objeto singular
             $game = $query_single_game->fetch(PDO::FETCH_OBJ);
 
             return $game;
