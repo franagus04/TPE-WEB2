@@ -16,6 +16,7 @@
     require_once './app/controller/home.controller.php';
     require_once './app/controller/game.controller.php';
     require_once './app/controller/admin.controller.php';
+    require_once './app/controller/auth.controller.php';
 
     define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
     
@@ -45,6 +46,11 @@
             }
             break;
         
+        case 'login':
+            $auth_controller = new AuthController();
+            $auth_controller->showLogIn();
+            break;
+        
         case "admin":
             if (!isset($params[1])) {
                 $admin_controller = new AdminController();
@@ -52,10 +58,6 @@
             }
             else{
                 switch ($params[1]) {
-                    case 'login':
-                        # code...
-                        break;
-                    
                     case 'edit':
                         $admin_controller = new AdminController();
                         $admin_controller->showEditor($params[2]);

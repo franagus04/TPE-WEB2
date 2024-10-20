@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-10-2024 a las 22:28:13
+-- Tiempo de generación: 20-10-2024 a las 04:33:29
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -87,6 +87,29 @@ INSERT INTO `pegi` (`class`, `age_range`, `esrb_class`) VALUES
 (16, '16+', 'M'),
 (18, '18+', 'AO');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `username` varchar(250) NOT NULL,
+  `pass` varchar(60) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `username`, `pass`) VALUES
+(1, 'webadmin', '$2y$10$nTktMWUf/DqxAzkaR6ARZeVbC8FDGFiUH57G/aqy35kQfRLuWdXeK');
+
+--
+-- Índices para tablas volcadas
+--
+
 --
 -- Indices de la tabla `listadox360`
 --
@@ -101,10 +124,30 @@ ALTER TABLE `pegi`
   ADD PRIMARY KEY (`class`);
 
 --
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
 -- AUTO_INCREMENT de la tabla `listadox360`
 --
 ALTER TABLE `listadox360`
-  MODIFY `id` mediumint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` mediumint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Restricciones para tablas volcadas
+--
 
 --
 -- Filtros para la tabla `listadox360`
