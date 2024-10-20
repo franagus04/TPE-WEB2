@@ -50,6 +50,10 @@
             $auth_controller = new AuthController();
             $auth_controller->showLogIn();
             break;
+
+        case 'logout':
+            $auth_controller = new AuthController();
+            $auth_controller->logout();
         
         case "admin":
             if (!isset($params[1])) {

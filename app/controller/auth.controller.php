@@ -38,5 +38,11 @@
                 return $this->view->showError('Credenciales incorrectas');
             }
         }
+        public function logout() {
+            session_start(); 
+            session_destroy(); 
+            header('Location: ' . BASE_URL);
+        }
+    
     }
 ?>
