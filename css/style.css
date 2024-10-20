@@ -5,7 +5,7 @@
 
 main{
     display: flex;
-    justify-content: center;
+    justify-items: center;
 }
 
 .nav-bar{
@@ -134,3 +134,4 @@ td a:hover{
     transition: 0.5s;
     font-size: large;
 }
+

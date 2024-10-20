@@ -1,6 +1,7 @@
 <?php
     require_once './app/view/admin.view.php';
     require_once './app/model/admin.model.php';
+    require_once './app/model/pegi.model.php';
     class AdminController{
 
         private $view;

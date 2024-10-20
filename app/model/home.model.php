@@ -23,7 +23,7 @@
             $query = "SELECT * from listadox360";               //comienza la query con la seleccion de la tabla completa
             
             //agrega filtros a la query segun el formulario enviado por el usuario
-            if ($_POST['vandal_rating'] != "NULL") {            //si el parametro no presenta el valor "NULL" añade el filtro a la query
+            if ($_POST['vandal_rating'] != "null") {            //si el parametro no presenta el valor "NULL" añade el filtro a la query
                 if ($query == "SELECT * from listadox360") {    //si el query aun no tiene filtros comienza la concatenacion con "WHERE"
                     if ($rating == "positive") {
                         $query .= " WHERE vandal_rating >= 8";
@@ -38,28 +38,28 @@
                     }
                 }                                               
             }                                                   //el codigo repite el patron con todos los filtros aplicables
-            if ($_POST['genre'] != "NULL") {
+            if ($_POST['genre'] != "null") {
                 if ($query == "SELECT * from listadox360") {
                     $query .= " WHERE genre = '".$genre."'";
                 }else{
                     $query .= " AND genre = '".$genre."'";
                 }
             }
-            if ($_POST['release'] != "NULL") {
+            if ($_POST['release'] != "null") {
                 if ($query == "SELECT * from listadox360") {
                     $query .= " WHERE `release` = '".$release."'";
                 }else{
                     $query .= " AND `release` = '".$release."'";
                 }
             }
-            if ($_POST['pegi_class'] != "NULL") {
+            if ($_POST['pegi_class'] != "null") {
                 if ($query == "SELECT * from listadox360") {
                     $query .= " WHERE pegi_class = '".$class."'";
                 }else{
                     $query .= " AND pegi_class = '".$class."'";
                 }
             }
-            if ($_POST['devs'] != "NULL") {
+            if ($_POST['devs'] != "null") {
                 if ($query == "SELECT * from listadox360") {
                     $query .= " WHERE devs = '".$devs."'";
                 }else{

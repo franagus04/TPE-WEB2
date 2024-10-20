@@ -41,7 +41,7 @@
         public function logout() {
             session_start(); 
             session_destroy(); 
-            header('Location: ' . BASE_URL);
+            header('Location: ' . BASE_URL.'home');
         }
     
     }

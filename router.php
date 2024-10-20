@@ -30,7 +30,7 @@
     $params = explode("/",$action);
 
     switch ($params[0]) {
-        case "home":
+        case 'home':
             $home_controller = new HomeController();
             $home_controller->showHome();
             break;
