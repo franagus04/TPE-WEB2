@@ -38,7 +38,7 @@
             //consulta por el juego
             $query_single_game = $this->db->prepare("SELECT * from listadox360 WHERE id = ?");
             //ejecucion de la sentencia
-            $query_single_game->execute($id);
+            $query_single_game->execute([$id]);
             //recepcion de datos almacenado como un objeto singular
             $game = $query_single_game->fetch(PDO::FETCH_OBJ);
 
@@ -49,7 +49,7 @@
             //sentencia para eliminacion del juego
             $query_delete_game = $this->db->prepare("DELETE from listadox360 WHERE id = ?");
             //ejecucion
-            $query_delete_game->execute($id);
+            $query_delete_game->execute([$id]);
         }
     }
 ?>
