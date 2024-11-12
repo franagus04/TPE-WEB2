@@ -6,7 +6,7 @@
         }
         public function getGameByid($id){
             //consulta por el juego
-            $query_single_game = $this->db->prepare("SELECT * from listadox360 WHERE id = ".$id."");
+            $query_single_game = $this->db->prepare("SELECT * from listadox360 WHERE id_listadox360 = ".$id."");
             //ejecucion de la sentencia
             $query_single_game->execute();
             //recepcion de datos almacenado como un objeto singular
@@ -26,7 +26,7 @@
 
         public function editGame($id, $title_id, $class, $title, $release, $genre, $devs, $rating, $thumbnail){
             //sentencia para actualizacion del elemento
-            $query = $this->db->prepare("UPDATE listadox360 SET `title_id`= ? , `pegi_class`= ? , `title`= ? , `release`= ? , `genre`= ? , `devs`= ? , `vandal_rating`= ? , `thumbnail`= ? WHERE id= ?");
+            $query = $this->db->prepare("UPDATE listadox360 SET `title_id`= ? , `pegi_class`= ? , `title`= ? , `release`= ? , `genre`= ? , `devs`= ? , `vandal_rating`= ? , `thumbnail`= ? WHERE id_listadox360 = ?");
             //ejecucion con declaracion de valores para la sentencia
             $query->execute([$title_id, $class, $title, $release, $genre, $devs, $rating, $thumbnail, $id]);
             return $query;
@@ -34,7 +34,7 @@
 
         public function deleteGame($id){
             //sentencia para eliminacion del juego
-            $query_delete_game = $this->db->prepare("DELETE from listadox360 WHERE id = ?");
+            $query_delete_game = $this->db->prepare("DELETE from listadox360 WHERE id_listadox360 = ?");
             //ejecucion
             $query_delete_game->execute([$id]);
         }

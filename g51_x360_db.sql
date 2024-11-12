@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-10-2024 a las 04:33:29
+-- Tiempo de generación: 12-11-2024 a las 23:15:12
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `listadox360` (
-  `id` mediumint(5) NOT NULL,
+  `id_listadox360` mediumint(5) NOT NULL,
   `title_id` varchar(10) NOT NULL,
   `pegi_class` tinyint(2) NOT NULL,
   `title` varchar(60) NOT NULL,
@@ -43,8 +43,8 @@ CREATE TABLE `listadox360` (
 -- Volcado de datos para la tabla `listadox360`
 --
 
-INSERT INTO `listadox360` (`id`, `title_id`, `pegi_class`, `title`, `release`, `genre`, `devs`, `vandal_rating`, `thumbnail`) VALUES
-(1, '555308c2', 18, 'Assassin\'s Creed IV: Black Flag', 2013, 'Accion', 'Ubisoft', '9', 'https://media.vandal.net/t200/20557/201322812018_1.jpg'),
+INSERT INTO `listadox360` (`id_listadox360`, `title_id`, `pegi_class`, `title`, `release`, `genre`, `devs`, `vandal_rating`, `thumbnail`) VALUES
+(1, '555308c2', 18, 'Assassins Creed IV: Black Flag', 2013, 'Accion', 'Ubisoft', '9', 'https://media.vandal.net/t200/20557/201322812018_1.jpg'),
 (2, '373407d8', 7, 'Hora de Aventuras: Finn y Jake, Investigadores', 2015, 'Aventura', 'Bandai Namco', '6', 'https://m.media-amazon.com/images/I/81dt08wLF5L._AC_UF1000,1000_QL80_.jpg'),
 (3, '373307d9', 12, 'Dance Central 3', 2012, 'Deporte', 'Harmonix', '9', 'https://http2.mlstatic.com/D_NQ_NP_658655-MLA76350674990_052024-O.webp'),
 (5, '53450815', 7, 'Sonic and SEGA All-Stars Racing', 2010, 'Carreras', 'Sega', '8', 'https://media.vandal.net/t200/10765/201011911317_1.jpg'),
@@ -70,7 +70,7 @@ INSERT INTO `listadox360` (`id`, `title_id`, `pegi_class`, `title`, `release`, `
 --
 
 CREATE TABLE `pegi` (
-  `class` tinyint(2) NOT NULL,
+  `id_pegi` tinyint(2) NOT NULL,
   `age_range` varchar(10) NOT NULL,
   `esrb_class` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -79,7 +79,7 @@ CREATE TABLE `pegi` (
 -- Volcado de datos para la tabla `pegi`
 --
 
-INSERT INTO `pegi` (`class`, `age_range`, `esrb_class`) VALUES
+INSERT INTO `pegi` (`id_pegi`, `age_range`, `esrb_class`) VALUES
 (1, 'NN', 'RP'),
 (3, '3+', 'E'),
 (7, '7+', 'E10+'),
@@ -114,14 +114,14 @@ INSERT INTO `usuarios` (`id`, `username`, `pass`) VALUES
 -- Indices de la tabla `listadox360`
 --
 ALTER TABLE `listadox360`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id_listadox360`),
   ADD KEY `pegi_class` (`pegi_class`);
 
 --
 -- Indices de la tabla `pegi`
 --
 ALTER TABLE `pegi`
-  ADD PRIMARY KEY (`class`);
+  ADD PRIMARY KEY (`id_pegi`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -137,7 +137,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `listadox360`
 --
 ALTER TABLE `listadox360`
-  MODIFY `id` mediumint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_listadox360` mediumint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
@@ -153,7 +153,7 @@ ALTER TABLE `usuarios`
 -- Filtros para la tabla `listadox360`
 --
 ALTER TABLE `listadox360`
-  ADD CONSTRAINT `listadox360_ibfk_2` FOREIGN KEY (`pegi_class`) REFERENCES `pegi` (`class`);
+  ADD CONSTRAINT `listadox360_ibfk_2` FOREIGN KEY (`pegi_class`) REFERENCES `pegi` (`id_pegi`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

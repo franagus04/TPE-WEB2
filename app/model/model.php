@@ -14,9 +14,9 @@
             $query = $this->db->query('SHOW TABLES');
             $tables=$query->fetchAll();
             if (count($tables) == 0) {
-                $sql=<<<END
-                CREATE TABLE `listadox360` (
-                    `id` mediumint(5) NOT NULL,
+                $sql=<<<SQL
+                    CREATE TABLE `listadox360` (
+                    `id_listadox360` mediumint(5) NOT NULL,
                     `title_id` varchar(10) NOT NULL,
                     `pegi_class` tinyint(2) NOT NULL,
                     `title` varchar(60) NOT NULL,
@@ -27,8 +27,12 @@
                     `thumbnail` varchar(300) NOT NULL
                     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='listado de juegos de Xbox 360';
 
-                    INSERT INTO `listadox360` (`id`, `title_id`, `pegi_class`, `title`, `release`, `genre`, `devs`, `vandal_rating`, `thumbnail`) VALUES
-                    (1, '555308c2', 18, 'Assassin\'s Creed IV: Black Flag', 2013, 'Accion', 'Ubisoft', '9', 'https://media.vandal.net/t200/20557/201322812018_1.jpg'),
+                    --
+                    -- Volcado de datos para la tabla `listadox360`
+                    --
+
+                    INSERT INTO `listadox360` (`id_listadox360`, `title_id`, `pegi_class`, `title`, `release`, `genre`, `devs`, `vandal_rating`, `thumbnail`) VALUES
+                    (1, '555308c2', 18, 'Assassins Creed IV: Black Flag', 2013, 'Accion', 'Ubisoft', '9', 'https://media.vandal.net/t200/20557/201322812018_1.jpg'),
                     (2, '373407d8', 7, 'Hora de Aventuras: Finn y Jake, Investigadores', 2015, 'Aventura', 'Bandai Namco', '6', 'https://m.media-amazon.com/images/I/81dt08wLF5L._AC_UF1000,1000_QL80_.jpg'),
                     (3, '373307d9', 12, 'Dance Central 3', 2012, 'Deporte', 'Harmonix', '9', 'https://http2.mlstatic.com/D_NQ_NP_658655-MLA76350674990_052024-O.webp'),
                     (5, '53450815', 7, 'Sonic and SEGA All-Stars Racing', 2010, 'Carreras', 'Sega', '8', 'https://media.vandal.net/t200/10765/201011911317_1.jpg'),
@@ -47,13 +51,23 @@
                     (18, '4e4d0862', 12, 'Dragon Ball Xenoverse', 2015, 'Pelea', 'Bandai Namco', '7', 'https://media.vandal.net/t200/24458/dragon-ball-xenoverse-201522695713_1.jpg'),
                     (19, '415608b5', 16, 'The Amazing Spider-Man', 2012, 'Aventura', 'Activision', '7', 'https://media.vandal.net/t200/15157/2012779248_1.jpg');
 
+                    -- --------------------------------------------------------
+
+                    --
+                    -- Estructura de tabla para la tabla `pegi`
+                    --
+
                     CREATE TABLE `pegi` (
-                    `class` tinyint(2) NOT NULL,
+                    `id_pegi` tinyint(2) NOT NULL,
                     `age_range` varchar(10) NOT NULL,
                     `esrb_class` varchar(5) NOT NULL
                     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-                    INSERT INTO `pegi` (`class`, `age_range`, `esrb_class`) VALUES
+                    --
+                    -- Volcado de datos para la tabla `pegi`
+                    --
+
+                    INSERT INTO `pegi` (`id_pegi`, `age_range`, `esrb_class`) VALUES
                     (1, 'NN', 'RP'),
                     (3, '3+', 'E'),
                     (7, '7+', 'E10+'),
@@ -61,9 +75,75 @@
                     (16, '16+', 'M'),
                     (18, '18+', 'AO');
 
+                    -- --------------------------------------------------------
+
+                    --
+                    -- Estructura de tabla para la tabla `usuarios`
+                    --
+
+                    CREATE TABLE `usuarios` (
+                    `id` int(11) NOT NULL,
+                    `username` varchar(250) NOT NULL,
+                    `pass` varchar(60) NOT NULL
+                    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+                    --
+                    -- Volcado de datos para la tabla `usuarios`
+                    --
+
                     INSERT INTO `usuarios` (`id`, `username`, `pass`) VALUES
                     (1, 'webadmin', '$2y$10$nTktMWUf/DqxAzkaR6ARZeVbC8FDGFiUH57G/aqy35kQfRLuWdXeK');
-                END;
+
+                    --
+                    -- Índices para tablas volcadas
+                    --
+
+                    --
+                    -- Indices de la tabla `listadox360`
+                    --
+                    ALTER TABLE `listadox360`
+                    ADD PRIMARY KEY (`id_listadox360`),
+                    ADD KEY `pegi_class` (`pegi_class`);
+
+                    --
+                    -- Indices de la tabla `pegi`
+                    --
+                    ALTER TABLE `pegi`
+                    ADD PRIMARY KEY (`id_pegi`);
+
+                    --
+                    -- Indices de la tabla `usuarios`
+                    --
+                    ALTER TABLE `usuarios`
+                    ADD PRIMARY KEY (`id`);
+
+                    --
+                    -- AUTO_INCREMENT de las tablas volcadas
+                    --
+
+                    --
+                    -- AUTO_INCREMENT de la tabla `listadox360`
+                    --
+                    ALTER TABLE `listadox360`
+                    MODIFY `id_listadox360` mediumint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+                    --
+                    -- AUTO_INCREMENT de la tabla `usuarios`
+                    --
+                    ALTER TABLE `usuarios`
+                    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+                    --
+                    -- Restricciones para tablas volcadas
+                    --
+
+                    --
+                    -- Filtros para la tabla `listadox360`
+                    --
+                    ALTER TABLE `listadox360`
+                    ADD CONSTRAINT `listadox360_ibfk_2` FOREIGN KEY (`pegi_class`) REFERENCES `pegi` (`id_pegi`);
+                    COMMIT;
+                SQL;
                 $this->db->query($sql);
             }
         }

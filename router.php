@@ -17,7 +17,7 @@
     require_once './libs/response.php';
     require_once './app/middlewares/session.auth.middleware.php';
     require_once './app/middlewares/verify.auth.middleware.php';    
-    require_once './app/controller/home.controller.php';
+    require_once './app/controller/listadox360.controller.php';
     require_once './app/controller/game.controller.php';
     require_once './app/controller/admin.controller.php';
     require_once './app/controller/auth.controller.php';
@@ -39,14 +39,14 @@
     switch ($params[0]) {
         case 'home':
             sessionAuthMiddleware($res);
-            $home_controller = new HomeController($res);
+            $home_controller = new listadox360Controller($res);
             $home_controller->showHome();
             break;
 
         case "game":
             sessionAuthMiddleware($res);
             if (!isset($params[1])) {
-                $home_controller = new HomeController($res);
+                $home_controller = new listadox360Controller($res);
                 $home_controller->showHome();
             }
             else{

@@ -1,14 +1,14 @@
 <?php
-    require_once './app/model/home.model.php';
-    require_once './app/view/home.view.php';
+    require_once './app/model/listadox360.model.php';
+    require_once './app/view/listadox360.view.php';
 
-    class HomeController {
+    class listadox360Controller {
         private $model;
         private $view;
 
         public function __construct($res){
-            $this->model = new HomeModel();
-            $this->view = new HomeView($res->user);
+            $this->model = new listadox360Model();
+            $this->view = new listadox360View($res->user);
         }
 
         //esta funcion establece los parametros en nulo, lo que hace que la lista se muestre completa

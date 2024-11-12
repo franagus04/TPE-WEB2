@@ -20,7 +20,7 @@ class pegiModel{
     }
 
     function getPegi($id){
-        $query = $this->db->prepare("SELECT * FROM pegi WHERE class= ?");
+        $query = $this->db->prepare("SELECT * FROM pegi WHERE id_pegi = ?");
         $query->execute( $id);
         $pegi = $query->fetch(PDO::FETCH_OBJ);
         return $pegi;
@@ -32,7 +32,7 @@ class pegiModel{
     }
 
     function deletePegi($id){
-        $query = $this->db->prepare("DELETE FROM pegi WHERE class= ?");
+        $query = $this->db->prepare("DELETE FROM pegi WHERE id_pegi = ?");
         $query->execute($id);
     }
 

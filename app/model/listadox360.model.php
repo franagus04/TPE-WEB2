@@ -1,6 +1,6 @@
 <?php
-    require_once './app/controller/home.controller.php';
-    class HomeModel{
+    require_once './app/controller/listadox360.controller.php';
+    class listadox360Model{
         private $db;
 
         public function __construct(){

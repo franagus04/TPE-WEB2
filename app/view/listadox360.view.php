@@ -1,5 +1,5 @@
 <?php
-    class HomeView {
+    class listadox360View {
         private $user = null;
 
         public function __construct($user) {
