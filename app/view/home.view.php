@@ -1,5 +1,10 @@
 <?php
     class HomeView {
+        private $user = null;
+
+        public function __construct($user) {
+            $this->user = $user;
+        }
 
         function showHome(){
             require_once './templates/layout/header.phtml';

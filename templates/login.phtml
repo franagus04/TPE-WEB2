@@ -1,6 +1,11 @@
 <main>
     <section class="login">
-        <form action="" method="post">
+        <?php if ($error): ?>
+            <div class='alert alert-danger' role='alert'>
+                <?= $error ?>
+            </div>
+        <?php endif ?>
+        <form action="login" method="post">
             <label for="user" class="login-form-item">Nombre de Usuario</label>
             <input type="text" id="user" name="user" class="login-form-item">
 

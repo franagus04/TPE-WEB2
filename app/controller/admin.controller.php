@@ -1,18 +1,39 @@
 <?php
     require_once './app/view/admin.view.php';
     require_once './app/model/admin.model.php';
-    require_once './app/model/pegi.model.php';
+    require_once './app/model/game.model.php';
+
     class AdminController{
 
-        private $view;
-        private $model;
+        private $adminView;
+        private $adminModel;
+        private $gameModel;
 
-        public function __construct(){
-            $this->view = new AdminView();
-            $this->model = new AdminModel();
+        public function __construct($res){
+            $this->adminView = new AdminView($res->user);
+            $this->adminModel = new AdminModel();
+            $this->gameModel = new GameModel();
         }
 
-        public function insertElement(){
+        public function showAdmin(){
+            $this->defaultParameters();
+            $this->adminView->showAdmin();
+
+
+            $db = $this->adminModel->getDB();
+            $this->adminView->showDB($db);
+        }
+
+        public function showEditor($id){
+            $this->defaultParameters();
+            $game = $this->gameModel->getGameByid($id);
+            $this->adminView->showEditor($game);
+            if (!($_POST['vandal_rating']=="NULL" && $_POST['genre']=="NULL" && $_POST['release']=="NULL" && $_POST['pegi_class']=="NULL" && $_POST['devs']=="NULL")) {
+                $this->editElement($id);
+            }
+        }
+
+        public function addElement(){
             $title_id = $_POST['title_id'];
             $class = $_POST['pegi_class'];
             $title = $_POST['title'];
@@ -21,7 +42,8 @@
             $devs = $_POST['devs'];
             $rating = $_POST['vandal_rating'];
             $thumbnail = $_POST['thumbnail'];
-            $this->model->insertGame($title_id, $class, $title, $release, $genre, $devs, $rating, $thumbnail);
+            $this->gameModel->insertGame($title_id, $class, $title, $release, $genre, $devs, $rating, $thumbnail);
+            header("Location: ".BASE_URL."admin");
         }
 
         public function editElement($id){
@@ -33,7 +55,7 @@
             $devs = $_POST['devs'];
             $rating = $_POST['vandal_rating'];
             $thumbnail = $_POST['thumbnail'];
-            $this->model->editGame($id, $title_id, $class, $title, $release, $genre, $devs, $rating, $thumbnail);
+            $this->gameModel->editGame($id, $title_id, $class, $title, $release, $genre, $devs, $rating, $thumbnail);
         }
 
         public function defaultParameters(){ 
@@ -71,30 +93,8 @@
             $_POST['devs'] = "NULL";
         }
 
-        public function showAdmin(){
-            $this->defaultParameters();
-            $this->view->showAdmin();
-
-            if (!($_POST['vandal_rating']=="NULL" && $_POST['genre']=="NULL" && $_POST['release']=="NULL" && $_POST['pegi_class']=="NULL" && $_POST['devs']=="NULL")) {
-                $this->insertElement();
-                $this->resetParameters();
-            }
-
-            $db = $this->model->getDB();
-            $this->view->showDB($db);
-        }
-
-        public function showEditor($id){
-            $this->defaultParameters();
-            $game = $this->model->getGameByid($id);
-            $this->view->showEditor($game);
-            if (!($_POST['vandal_rating']=="NULL" && $_POST['genre']=="NULL" && $_POST['release']=="NULL" && $_POST['pegi_class']=="NULL" && $_POST['devs']=="NULL")) {
-                $this->editElement($id);
-            }
-        }
-
         public function deleteGame($id){
-            $this->model->deleteGame($id);
+            $this->gameModel->deleteGame($id);
             header("Location: ".BASE_URL."admin");
         }
     }

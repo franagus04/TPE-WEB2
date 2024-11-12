@@ -5,8 +5,9 @@
     class GameController{
         private $view;
         private $model;
-        public function __construct(){
-            $this->view = new GameView();
+        
+        public function __construct($res){
+            $this->view = new GameView($res->user);
             $this->model = new GameModel();
         }
         public function ShowGameByid($id){          //muestra la pagina singular de cada juego

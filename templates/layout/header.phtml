@@ -15,8 +15,11 @@
                 <div>
                     <a href="home" class="titulo">X360-DB</a>
                 </div>
-                <div class="btn">
-                    <a href="login"><button>Login</button></a>
-                </div>
+                <?php if($this->user): ?>
+                    <a href="logout"><button>Logout</button></a>
+                <?php else: ?>
+                    <a href="showLogIn"><button>Login</button></a>
+                <?php endif; ?>
+
             </nav>
         </header>

@@ -6,9 +6,9 @@
         private $model;
         private $view;
 
-        public function __construct(){
+        public function __construct($res){
             $this->model = new HomeModel();
-            $this->view = new HomeView();
+            $this->view = new HomeView($res->user);
         }
 
         //esta funcion establece los parametros en nulo, lo que hace que la lista se muestre completa
