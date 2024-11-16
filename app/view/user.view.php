@@ -1,5 +1,5 @@
 <?php
-    class AdminView{
+    class UserView{
 
         private $user = null;
 
@@ -16,10 +16,10 @@
             require_once './templates/admin.table.phtml';
             require_once './templates/layout/footer.phtml';
         }
-        
-        public function showEditor($game){
+
+        public function showLogIn($error = ''){
             require_once './templates/layout/header.phtml';
-            require_once './templates/edit.form.phtml';
+            require_once './templates/login.phtml';
             require_once './templates/layout/footer.phtml';
         }
     }

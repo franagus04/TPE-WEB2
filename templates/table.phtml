@@ -13,10 +13,10 @@
             foreach($table as $game) {         //itera sobre la tabla recibida
                 $thumbnail = $game->thumbnail; //rellena variables con los datos del objeto sobre el que trabaja en cada iteracion
                 $title = $game->title;
-                $id = $game->id_listadox360;
+                $id = $game->id_game;
                 $title_id = $game->title_id;
                 $genre = $game->genre;
-                $release = $game->release;
+                $year = $game->year;
                 $class = $game->pegi_class;
                 $devs = $game->devs;
                 $rate = $game->vandal_rating;
@@ -31,7 +31,7 @@
                     </td>
                     <td class="title-id-property"><?= $title_id ?></td>
                     <td class="genre-property"><?= $genre ?></td>
-                    <td class="release-property"><?= $release ?></td>
+                    <td class="year-property"><?= $year ?></td>
                     <td class="class-property"><?= $class ?></td>
                     <td class="devs-property"><?= $devs ?></td>
                     <td class="rating-property"><?= $rate ?></td>

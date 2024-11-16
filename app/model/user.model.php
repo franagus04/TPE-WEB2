@@ -1,5 +1,5 @@
 <?php
-    class AdminModel{
+    class UserModel{
         private $db;
 
         public function __construct(){
@@ -8,7 +8,7 @@
 
         public function getDB(){
             //consulta por la tabla completa
-            $query_db = $this->db->prepare("SELECT * from listadox360");
+            $query_db = $this->db->prepare("SELECT * from game");
             //ejecucion de la sentencia
             $query_db->execute();
             //recepcion de datos
@@ -18,7 +18,7 @@
         }
         
         public function userExists($username){
-            $query = $this->db->prepare("SELECT * FROM usuarios WHERE username = ?");
+            $query = $this->db->prepare("SELECT * FROM user WHERE username = ?");
             $query->execute([$username]);
 
             $user = $query->fetch(PDO::FETCH_OBJ);

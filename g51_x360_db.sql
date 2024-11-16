@@ -24,15 +24,15 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `listadox360`
+-- Estructura de tabla para la tabla `game`
 --
 
-CREATE TABLE `listadox360` (
-  `id_listadox360` mediumint(5) NOT NULL,
+CREATE TABLE `game` (
+  `id_game` mediumint(5) NOT NULL,
   `title_id` varchar(10) NOT NULL,
   `pegi_class` tinyint(2) NOT NULL,
   `title` varchar(60) NOT NULL,
-  `release` smallint(4) NOT NULL,
+  `year` smallint(4) NOT NULL,
   `genre` varchar(45) NOT NULL,
   `devs` varchar(45) NOT NULL,
   `vandal_rating` varchar(10) NOT NULL,
@@ -40,13 +40,14 @@ CREATE TABLE `listadox360` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='listado de juegos de Xbox 360';
 
 --
--- Volcado de datos para la tabla `listadox360`
+-- Volcado de datos para la tabla `game`
 --
 
-INSERT INTO `listadox360` (`id_listadox360`, `title_id`, `pegi_class`, `title`, `release`, `genre`, `devs`, `vandal_rating`, `thumbnail`) VALUES
+INSERT INTO `game` (`id_game`, `title_id`, `pegi_class`, `title`, `year`, `genre`, `devs`, `vandal_rating`, `thumbnail`) VALUES
 (1, '555308c2', 18, 'Assassins Creed IV: Black Flag', 2013, 'Accion', 'Ubisoft', '9', 'https://media.vandal.net/t200/20557/201322812018_1.jpg'),
 (2, '373407d8', 7, 'Hora de Aventuras: Finn y Jake, Investigadores', 2015, 'Aventura', 'Bandai Namco', '6', 'https://m.media-amazon.com/images/I/81dt08wLF5L._AC_UF1000,1000_QL80_.jpg'),
 (3, '373307d9', 12, 'Dance Central 3', 2012, 'Deporte', 'Harmonix', '9', 'https://http2.mlstatic.com/D_NQ_NP_658655-MLA76350674990_052024-O.webp'),
+(4, '415608b5', 16, 'The Amazing Spider-Man', 2012, 'Aventura', 'Activision', '7', 'https://media.vandal.net/t200/15157/2012779248_1.jpg'),
 (5, '53450815', 7, 'Sonic and SEGA All-Stars Racing', 2010, 'Carreras', 'Sega', '8', 'https://media.vandal.net/t200/10765/201011911317_1.jpg'),
 (6, '584112b0', 18, 'Call of Juarez: Gunslinger', 2013, 'Disparos', 'Techland', '8', 'https://media.vandal.net/t200/16708/2013427105836_1.jpg'),
 (7, '394f07d1', 16, 'Diablo III', 2013, 'Rol', 'Blizzard', '8', 'https://media.vandal.net/t200/15249/diablo-iii-2013831113047_1.jpg'),
@@ -60,8 +61,7 @@ INSERT INTO `listadox360` (`id_listadox360`, `title_id`, `pegi_class`, `title`, 
 (15, '4d5308ed', 3, 'Kinect Adventures!', 2010, 'Deporte', 'Microsoft', '6', 'https://media.vandal.net/t200/12659/2011111911284_1.jpg'),
 (16, '555308ca', 18, 'Far Cry 4', 2014, 'Aventura', 'Ubisoft', '8', 'https://media.vandal.net/t200/24455/far-cry-4-2014519123954_1.jpg'),
 (17, '415608c3', 18, 'Call of Duty: Black Ops II', 2011, 'Disparos', 'Activision', '9', 'https://media.vandal.net/t200/14958/2012825101040_1.jpg'),
-(18, '4e4d0862', 12, 'Dragon Ball Xenoverse', 2015, 'Pelea', 'Bandai Namco', '7', 'https://media.vandal.net/t200/24458/dragon-ball-xenoverse-201522695713_1.jpg'),
-(19, '415608b5', 16, 'The Amazing Spider-Man', 2012, 'Aventura', 'Activision', '7', 'https://media.vandal.net/t200/15157/2012779248_1.jpg');
+(18, '4e4d0862', 12, 'Dragon Ball Xenoverse', 2015, 'Pelea', 'Bandai Namco', '7', 'https://media.vandal.net/t200/24458/dragon-ball-xenoverse-201522695713_1.jpg');
 
 -- --------------------------------------------------------
 
@@ -90,20 +90,20 @@ INSERT INTO `pegi` (`id_pegi`, `age_range`, `esrb_class`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuarios`
+-- Estructura de tabla para la tabla `user`
 --
 
-CREATE TABLE `usuarios` (
+CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `username` varchar(250) NOT NULL,
   `pass` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `usuarios`
+-- Volcado de datos para la tabla `user`
 --
 
-INSERT INTO `usuarios` (`id`, `username`, `pass`) VALUES
+INSERT INTO `user` (`id`, `username`, `pass`) VALUES
 (1, 'webadmin', '$2y$10$nTktMWUf/DqxAzkaR6ARZeVbC8FDGFiUH57G/aqy35kQfRLuWdXeK');
 
 --
@@ -111,10 +111,10 @@ INSERT INTO `usuarios` (`id`, `username`, `pass`) VALUES
 --
 
 --
--- Indices de la tabla `listadox360`
+-- Indices de la tabla `game`
 --
-ALTER TABLE `listadox360`
-  ADD PRIMARY KEY (`id_listadox360`),
+ALTER TABLE `game`
+  ADD PRIMARY KEY (`id_game`),
   ADD KEY `pegi_class` (`pegi_class`);
 
 --
@@ -124,9 +124,9 @@ ALTER TABLE `pegi`
   ADD PRIMARY KEY (`id_pegi`);
 
 --
--- Indices de la tabla `usuarios`
+-- Indices de la tabla `user`
 --
-ALTER TABLE `usuarios`
+ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -134,15 +134,15 @@ ALTER TABLE `usuarios`
 --
 
 --
--- AUTO_INCREMENT de la tabla `listadox360`
+-- AUTO_INCREMENT de la tabla `game`
 --
-ALTER TABLE `listadox360`
-  MODIFY `id_listadox360` mediumint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+ALTER TABLE `game`
+  MODIFY `id_game` mediumint(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- AUTO_INCREMENT de la tabla `usuarios`
+-- AUTO_INCREMENT de la tabla `user`
 --
-ALTER TABLE `usuarios`
+ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
@@ -150,10 +150,10 @@ ALTER TABLE `usuarios`
 --
 
 --
--- Filtros para la tabla `listadox360`
+-- Filtros para la tabla `game`
 --
-ALTER TABLE `listadox360`
-  ADD CONSTRAINT `listadox360_ibfk_2` FOREIGN KEY (`pegi_class`) REFERENCES `pegi` (`id_pegi`);
+ALTER TABLE `game`
+  ADD CONSTRAINT `game_ibfk_2` FOREIGN KEY (`pegi_class`) REFERENCES `pegi` (`id_pegi`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
